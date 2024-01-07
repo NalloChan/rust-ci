@@ -16,6 +16,8 @@ jobs:
       with:
         toolchain: stable
         components: rustfmt, clippy
+    - name: Change directory
+      run: cd project
     - name: Run check
       run: cargo check
     - name: Run rustfmt
@@ -30,5 +32,7 @@ jobs:
       uses: actions/checkout@v3
     - name: Set Toolchain
       uses: dtolnay/rust-toolchain@stable
+    - name: Change directory
+      run: cd project
     - name: Run test
       run: cargo test
